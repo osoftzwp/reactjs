@@ -63,8 +63,8 @@ router.post('/login', async (req, res) => {
 });
 
 const validUser = (req, res, next) => {
-    var token = res.header('auth');
-    res.token = token;
+    var token = req.header('auth');
+    req.token = token;
 
     next();
 }
