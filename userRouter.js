@@ -69,6 +69,8 @@ const validUser = (req, res, next) => {
     next();
 }
 router.get('/getAll', validUser, async (req, res) => {
+    // http://localhost:5000/api/getAll
+    //     "auth":"token",
     jwt.verify(res.token, 'Deepa', (err, data) => {
         if (err) {
             res.sendStatus(403);
